@@ -1,0 +1,25 @@
+{
+    "name": "zendframework/skeleton-application",
+    "description": "Skeleton Application for ZF2",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zend-stdlib" : "~2.7.7",
+        "zendframework/zendframework": "~2.5.3",
+        "doctrine/doctrine-orm-module" : "0.*",
+        "zendframework/zend-validator": "^2.10",
+        "zendframework/zend-filter": "^2.7",
+        "zendframework/zend-inputfilter": "^2.7",
+        "zendframework/zend-i18n": "^2.7",
+        "zendframework/zend-eventmanager": "~2.5",
+        "zendframework/zend-loader": "^2.5",
+        "zendframework/zend-mvc": "2.6.0 as dev-hotfix/bc-break-view"
+        
+        
+    }
+}

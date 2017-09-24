@@ -1,0 +1,67 @@
+<form action="<?php echo $this->url('simulation-update', ['id' => $result->getId()]); ?>" method="POST" role="form">
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Simulação</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="alert alert-info" role="alert">Criar simulação de investimento financeiro.</div>
+
+            <div class="row">
+                <div class="col-md-12 ">                
+                    <label>Tipo de investimento</label>
+                    <div class="input-group-md id_type">
+                        <select class="form-control" name="id_type">
+                            <?php foreach ($this->types as $key => $value) { ?>
+                                <option <?php echo $result->getTypes()->getId() == $value->getId() ? 'selected' : '' ?> value="<?php echo $value->getId() ?>" ><?php echo $value->getName() ?></option>
+                            <?php } ?>
+                        </select>                 
+                    </div>
+                    <span class="help-block"></span>
+                </div>                
+            </div>
+
+            <div class="row row-border">
+                <div class="border"></div>                
+            </div>
+
+            <div class="aplications-group">
+                <input type="hidden" name="json_items" value="">
+
+                <?php foreach($this->result->getApplications() as $value){ ?>                
+                <div class="row item">
+                    <input type="hidden" class="id-application" value="<?php echo $value->getId() ?>"/> 
+                    <div class="col-md-2 val-div">
+                        <label>Aplicação</label>
+                        <div class="input-group-md">
+                            <input class="val_application form-control money" type="text" value="<?php echo number_format($value->getValApplication(),2,",",".") ?>">                     
+                        </div>
+                        <span class="help-block val-help"></span>
+                    </div>
+
+                    <div class="col-md-2 date-div">
+                        <label>Data</label>
+                        <div class="input-group-md">
+                            <input class="date_application form-control date" type="text" value="<?php echo $value->getDateApplication()->format('d/m/Y') ?>">                     
+                        </div> 
+                        <span class="help-block date-help"></span>
+                    </div>                
+                </div>
+                <?php }?>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button onclick="newRow()" type="button" class="btn btn-default">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-md-12 text-right">
+            <button onclick="saveSimulation()" type="button" class="btn btn-success">Atualizar Registro</button>
+            <a href="<?php echo $this->url('type-list'); ?>" class="btn btn-default">Cancelar</a>
+        </div>
+    </section>
+</form>

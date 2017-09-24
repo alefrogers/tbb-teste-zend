@@ -1,0 +1,65 @@
+<form action="<?php echo $this->url('simulation-insert'); ?>" method="POST" role="form">
+    
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Simulação</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="alert alert-info" role="alert">Criar simulação de investimento financeiro.</div>
+
+            <div class="row">
+                <div class="col-md-12">                
+                    <label>Tipo de investimento</label>
+                    <div class="input-group-md">
+                        <select class="form-control" name="id_type">
+                            <?php foreach ($this->types as $key => $value) { ?>
+                                <option value="<?php echo $value->getId() ?>" ><?php echo $value->getName() ?></option>
+                            <?php } ?>
+                        </select>                
+                    </div>
+                    <span class="help-block"></span>
+                </div>                
+            </div>
+
+            <div class="row row-border">
+                <div class="border"></div>                
+            </div>
+
+            <div class="aplications-group">
+                <input type="hidden" name="json_items" value="">
+                
+                <div class="row item">
+                    <div class="col-md-2 val-div">
+                        <label>Aplicação</label>
+                        <div class="input-group-md">
+                            <input class="val_application form-control money" type="text">                     
+                        </div>
+                        <span class="help-block val-help"></span>
+                    </div>
+
+                    <div class="col-md-2 date-div">
+                        <label>Data</label>
+                        <div class="input-group-md">
+                            <input class="date_application form-control date" type="text">                     
+                        </div> 
+                        <span class="help-block date-help"></span>
+                    </div>                
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button onclick="newRow()" type="button" class="btn btn-default">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-md-12 text-right">
+            <button onclick="saveSimulation()" type="button" class="btn btn-success">Salvar Registro</button>
+            <a href="<?php echo $this->url('simulation-list'); ?>" class="btn btn-default">Cancelar</a>
+        </div>
+    </section>
+</form>

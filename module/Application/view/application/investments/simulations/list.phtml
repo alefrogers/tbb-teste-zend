@@ -1,0 +1,114 @@
+<section id="register-section" class="row">
+    <div class="col-md-12 text-right">
+        <div class="btn-group pull-right">
+            <a href="<?php echo $this->url('simulation-create'); ?>" class="btn btn-default">Novo Registro</a>
+            <a href="<?php echo $this->url('simulation-list'); ?>" class="btn btn-default"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+        </div>        
+    </div>
+</section>
+
+
+<section id="simulations" class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Tipos</h3>
+    </div>
+    <div class="panel-body">
+
+        <?php if ($this->flashMessenger()->render('error') !== '') { ?>
+            <div class="alert alert-danger" role="alert"><?php echo $this->flashMessenger()->render('error') ?></div>   
+            <?php
+        }
+
+        if ($this->flashMessenger()->render('success') !== '') {
+            ?>
+            <div class="alert alert-success" role="alert"><?php echo $this->flashMessenger()->render('success') ?></div>        
+            <?php
+        }
+        ?>
+
+        <div class="alert alert-info" role="alert">Simulações de investimentos financeiros.</div>
+
+        <div class="row">
+            <form method="GET" action="">
+                <div class="col-md-12">
+                    <div class="input-search col-md-5">
+                        <label>Tipo de Investimento:</label>
+
+                        <select class="form-control" name="id_type">
+                            <option value=''>Selecionar ...</option>
+                            <?php foreach ($this->types as $key => $value) { ?>
+                                <option <?php echo isset($_GET['id_type']) ? ($_GET['id_type'] == $value->getId() ? 'selected' : '') : '' ?> value="<?php echo $value->getId() ?>" ><?php echo $value->getName() ?></option>
+                            <?php } ?>              
+                        </select>    
+                    </div>
+
+
+                    <div class="input-search col-md-3">
+                        <label>Data Inicial:</label>
+                        <input name="date_start" class="date" type="text" value="<?php echo isset($_GET['date_start']) ? $_GET['date_start'] : '' ?>">
+                    </div>
+                    <div class="input-search col-md-3">
+                        <label>Data Final:</label>
+                        <input name="date_end" class="date" type="text" value="<?php echo isset($_GET['date_end']) ? $_GET['date_end'] : '' ?>">
+                    </div>
+                    <div class="col-md-1 text-right">
+                        <button type="submit" class="btn btn-default">Filtrar</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <th>#</th>
+                <th>Tipo de investimento</th>
+                <th>Aplicação Total</th>
+                <th>Período Total</th>
+                <th>Rendimento Cliente</th>
+                <th>Rendimento Agencia</th>
+                <th>Rendimento Total</th>
+                <th>Data de Cadastro</th>
+                <th>Opções</th>
+                </thead>
+
+                <?php if (!empty($this->result)) { ?>
+                    <tbody>
+                        <?php foreach ($this->result as $value) { ?>
+                            <tr>
+                                <th><?php echo $value->getId() ?></th>
+                                <th><?php echo $value->getTypes()->getName() ?></th>
+                                <th>R$ <?php echo number_format($value->getTotalApplication(), 2, ",", ".") ?></th>
+                                <th><?php echo $value->getTotalPeriodAttribute() ?> Dias</th>
+                                <th>R$ <?php echo number_format($value->getIncomeAttribute('client'), 2, ",", ".") ?></th>
+                                <th>R$ <?php echo number_format($value->getIncomeAttribute('agency'), 2, ",", ".") ?></th>
+                                <th>R$ <?php echo number_format($value->getIncomeAttribute('total'), 2, ",", ".") ?></th>
+                                <th><?php echo $value->getCreatedAt()->format('d/m/Y') ?></th>                            
+                                <th class="btn-group text-right">
+                                    <a href="<?php echo $this->url('simulation-edit', array('id' => $value->getId())); ?>" class="btn btn-default">Editar</a>
+                                    <form action="<?php echo $this->url('simulation-remove', array('id' => $value->getId()))?>" method="POST">                                        
+                                        <button type="submit" class="btn btn-default">Remover</button>
+                                    </form>
+                                </th>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                <?php } else { ?>
+                    <tfoot>
+                        <tr>
+                            <td colspan="9" class="text-center msg-no-records">Nenhum registro encontrado!</td>
+                        </tr>
+                    </tfoot>
+                <?php } ?>
+
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <!--{{ $results->appends(Request::all())->links() }}-->
+    </div>
+</div>

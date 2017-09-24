@@ -1,0 +1,53 @@
+<form action="<?php echo $this->url('type-storage'); ?>" method="POST" role="form">
+    
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Tipos</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="alert alert-info" role="alert">Criar tipo de investimento financeiro.</div>
+
+            <div class="row">
+                <div class="col-md-12 name">                
+                    <label>Nome</label>
+                    <div class="input-group-md">
+                        <input name="name" type="text" class="form-control" value="">                     
+                    </div>
+                    <span class="help-block"></span>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 profitability">
+                    <label>Rentabilidade</label>
+                    <div class="input-group-md">
+                        <input name="profitability" type="number" class="form-control" value="">                     
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+                <div class="col-md-2 rate">
+                    <label>Taxa</label>
+                    <div class="input-group-md">
+                        <input name="rate" type="number" class="form-control" value="">                     
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+                <div class="col-md-3 application_days">
+                    <label>Período de Aplicação</label>
+                    <div class="input-group-md">
+                        <input name="application_days" type="number" class="form-control" value="">                     
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-md-12 text-right">
+            <button onclick="saveTypes()" type="button" class="btn btn-success">Salvar Registro</button>
+            <a href="<?php echo $this->url('type-list'); ?>" class="btn btn-default">Cancelar</a>
+        </div>
+    </section>
+</form>

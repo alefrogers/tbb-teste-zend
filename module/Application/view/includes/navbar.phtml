@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">Investimentos Financeiros</span>
+        </div>
+
+        <?php
+               $routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+                        ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();                
+               $routeName = explode('-', $routeName);
+        ?>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="<?php echo strstr($routeName[0], 'type') ? 'active' : '' ?>"><a href="<?php echo $this->url('type-list'); ?>">Tipos</a></li>
+                <li class="<?php echo strstr($routeName[0], 'simulation') ? 'active' : '' ?>"><a href="<?php echo $this->url('simulation-list'); ?>">Simulações</a></li>        
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
