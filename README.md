@@ -21,7 +21,7 @@
 - Vá até a pasta do reposotório e execute o comando ```$ composer update ```
 - Vá até ```config/autoload``` Altere as informações de conexão com o banco de dados dentro do arquivo ```doctrine_orm.local_example.php``` e altere seu nome para ```doctrine_orm.local.php```, removendo o ```_example```
 - Volte até a raiz e importe no seu banco de dados o arquivo ```testetbb.sql```
-- acesse ```localhost/name-project/public``` ou crie um virtual host apontando para a pasta public do projeto
+- acesse ```localhost/tbb-teste-zend-master/public``` ou crie um virtual host apontando para a pasta public do projeto
 
 # English
 ### Initial observations
@@ -43,4 +43,4 @@
 - Go to the repository folder and run ```$ composer update ```
 - Go to folder ```config/autoload``` and change the connection data in archive ```doctrine_orm.local_example.php``` after change the file name for ```doctrine_orm.local.php```, removing the ```_example```
 - Back to root folder and import in your database the archive ```testetbb.sql```
-- Go to ```localhost/name-project/public``` in your browser or create one virtual host target for public folder of the project
+- Go to ```localhost/tbb-teste-zend-master/public``` in your browser or create one virtual host target for public folder of the project
