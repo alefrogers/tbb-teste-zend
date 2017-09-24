@@ -15,7 +15,13 @@
 
 - Lembrando que eu também criei uma versão em Laravel que é o framework que eu mais domino. segue o link https://github.com/zatonsoul/testetbb
 
-
+### Como instalar
+- Instale o Composer
+- Clone o repositório.
+- Vá até a pasta do reposotório e execute o comando ```$ composer update ```
+- Vá até ```config/autoload``` Altere as informações de conexão com o banco de dados dentro do arquivo ```doctrine_orm.local_example.php``` e altere seu nome para ```doctrine_orm.local.php```, removendo o ```_example```
+- Volte até a raiz e importe no seu banco de dados o arquivo ```testetbb.sql```
+- acesse ```path/name-project/public``` ou crie um virtual host apontando para a pasta public do projeto
 
 # English
 ### Initial observations
@@ -31,19 +37,10 @@
  
  - Remembering that I created one version in Laravel. Laravel is my best framework. Follow the link https://github.com/zatonsoul/testetbb
 
-### Apache Setup
-
-To setup apache, setup a virtual host to point to the public/ directory of the
-project and you should be ready to go! It should look something like below:
-
-    <VirtualHost *:80>
-        ServerName zf2-tutorial.localhost
-        DocumentRoot /path/to/zf2-tutorial/public
-        SetEnv APPLICATION_ENV "development"
-        <Directory /path/to/zf2-tutorial/public>
-            DirectoryIndex index.php
-            AllowOverride All
-            Order allow,deny
-            Allow from all
-        </Directory>
-    </VirtualHost>
+### How to install
+- Install the composer.
+- Clone the repository in one php server (Wamp or Xamp).
+- Go to the repository folder and run ```$ composer update ```
+- Go to folder ```config/autoload``` and change the connection data in archive ```doctrine_orm.local_example.php``` after change the file name for ```doctrine_orm.local.php```, removing the ```_example```
+- Back to root folder and import in your database the archive ```testetbb.sql```
+- Go to ```localhost/name-project/public``` in your browser or create one virtual host target for public folder of the project
