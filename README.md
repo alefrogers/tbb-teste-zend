@@ -39,7 +39,7 @@
 
 ### How to install
 - Install the composer.
-- Clone the repository in one php server (Wamp or Xamp).
+- Clone the repository in the php server (Wamp or Xamp).
 - Go to the repository folder and run ```$ composer update ```
 - Go to folder ```config/autoload``` and change the connection data in archive ```doctrine_orm.local_example.php``` after change the file name for ```doctrine_orm.local.php```, removing the ```_example```
 - Back to root folder and import in your database the archive ```testetbb.sql```
