@@ -1,63 +1,35 @@
-ZendSkeletonApplication
-=======================
+# Português
 
-Introduction
-------------
-This is a simple, skeleton application using the ZF2 MVC layer and module
-systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with ZF2.
 
-Installation
-------------
+### Obsevações iniciais
+- Foi adicionado três campos referente a rendimento(Não ficou claro ao que "rendimento total" se referia) na tela de simulações.
 
-Using Composer (recommended)
-----------------------------
-The recommended way to get a working copy of this project is to clone the repository
-and use `composer` to install dependencies using the `create-project` command:
+	Exemplo : Tipo de investimento
 
-    curl -s https://getcomposer.org/installer | php --
-    php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application path/to/install
+	Rentabilidade: 15%
+	taxa:5%;
 
-Alternately, clone the repository and manually invoke `composer` using the shipped
-`composer.phar`:
+	1. Rendimento cliente = 10%
+	2. Rendimento da agência = 5%;
+	3. Rendimento Total = 15%
 
-    cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
-    cd ZendSkeletonApplication
-    php composer.phar self-update
-    php composer.phar install
+- Lembrando que eu também criei uma versão em Laravel que é o framework que eu mais domino. segue o link https://github.com/zatonsoul/testetbb
 
-(The `self-update` directive is to ensure you have an up-to-date `composer.phar`
-available.)
 
-Another alternative for downloading the project is to grab it via `curl`, and
-then pass it to `tar`:
 
-    cd my/project/dir
-    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
+# English
+### Initial observations
+- It was added three fields refering the income (it wasn't clear what the field "rendimento total" meant) in the simulations screen.
 
-You would then invoke `composer` to install dependencies per the previous
-example.
-
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
-
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
-
-Web Server Setup
-----------------
-
-### PHP CLI Server
-
-The simplest way to get started if you are using PHP 5.4 or above is to start the internal PHP cli-server in the root directory:
-
-    php -S 0.0.0.0:8080 -t public/ public/index.php
-
-This will start the cli-server on port 8080, and bind it to all network
-interfaces.
-
-**Note: ** The built-in CLI server is *for development only*.
+	Example: Type of investments
+    
+    income : 15%, rate : 5%
+    
+    1. Costumer income = 10%
+    2. Agency income = 5%
+    3. Total income = 15%
+ 
+ - Remembering that I created one version in Laravel. Laravel is my best framework. Follow the link https://github.com/zatonsoul/testetbb
 
 ### Apache Setup
 
