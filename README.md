@@ -21,7 +21,7 @@
 - Vá até a pasta do reposotório e execute o comando ```$ composer update ```
 - Vá até ```config/autoload``` Altere as informações de conexão com o banco de dados dentro do arquivo ```doctrine_orm.local_example.php``` e altere seu nome para ```doctrine_orm.local.php```, removendo o ```_example```
 - Volte até a raiz e importe no seu banco de dados o arquivo ```testetbb.sql```
-- acesse ```path/name-project/public``` ou crie um virtual host apontando para a pasta public do projeto
+- acesse ```localhost/name-project/public``` ou crie um virtual host apontando para a pasta public do projeto
 
 # English
 ### Initial observations
