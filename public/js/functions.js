@@ -124,15 +124,25 @@ function saveTypes() {
     }
 
 
-    if (profitability === '' || parseFloat(profitability) <= 0) {
+    if (profitability === '' || parseFloat(profitability) <= 0 || parseFloat(profitability) > 99) {
+        var msg = 'Campo rentabilidade inválido.';
+        if (parseFloat(profitability) > 99) {
+            msg = 'Digite um valor menor que 100.';
+        }
         $('.profitability').addClass('has-error');
-        $('.profitability .help-block').html('Campo rentabilidade inválido.');
+        $('.profitability .help-block').html(msg);
         error = true;
     }
 
-    if (rate === '' || parseFloat(rate) <= 0) {
+    if (rate === '' || parseFloat(rate) <= 0 || parseFloat(rate) > 99) {
+        var msg = 'Campo taxa inválido.';
+        
+        if (parseFloat(rate) > 99) {            
+            msg = 'Digite um valor menor que 100.';
+        }
+        
         $('.rate').addClass('has-error');
-        $('.rate .help-block').html('Campo taxa inválido.');
+        $('.rate .help-block').html(msg);
         error = true;
     }
 
